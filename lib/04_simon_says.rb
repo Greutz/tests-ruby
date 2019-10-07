@@ -27,5 +27,5 @@ end
 def titleize(string)
     unwanted = %w(and in the of a an)
 
-    string.capitalize.gsub( /\S+/ ) { |i| unwanted.include?(i) ? i : i.capitalize}
+    string.capitalize.gsub(/\w+/) {|w| unwanted.include?(w) ? w : w.capitalize}
 end
