@@ -11,11 +11,13 @@ end
 def sum(arr)
     n = gets.chomp.to_i
     while n != 0
+        print "> "
         arr << n
         n = gets.to_i
     end
-    puts arr.inject(0) {|r, o| r + o}
-    return arr.inject(0) {|r, o| r + o}
+    result = arr.inject(0) {|r, o| r + o}
+    puts "la somme des chiffres du tableau est de : #{result}"
+    return result
 end
 
 def multiply(mul1, mul2)
@@ -29,41 +31,62 @@ def power(pow1,pow2)
 end
 
 def factorial(fact)
-    i = (1..fact).inject(:*) || 1
-    return i         
+    result = i = (1..fact).inject(:*) || 1
+    p "La factorielle de #{fact} est de : #{result}"
+    return result        
 end
 
 
 
 def perform
+    # Annonce du menu
     puts "Pour additionner, entrez 'add' "
     puts "Pour soustraire, entrez 'subtract' "
     puts "Pour multiplier, entrez 'multiply' "
     puts "Pour additionner deux valeurs dans un tableau, entrez 'sum' "
     puts "Pour donner à une première valeur la puissance d'une autre valeur, entrez 'power'"
     puts "Pour obtenir le factoriel d'une valeur, tapez 'fact'"
+    print "> "
+    # Menu par conditions(si l'utilisateur entre les bons mots clés, il accède à une fonction)
     case gets.chomp
     when "add"
-        "Entrez vos valeurs à additionner !"
+        p "Entrez vos valeurs à additionner !"
+        print "> "
         add1 = gets.to_i
+        p "+"
+        print "> "
         add2 = gets.to_i
         add(add1, add2)
     when "subtract"
+        p "Entrez vos valeurs à soustraire !"
+        print "> "
         sub1 = gets.to_i
+        p "-"
+        print "> "
         sub2 = gets.to_i
         subtract(sub1, sub2)
     when "multiply"
+        p "Entrez vos valeurs à multiplier !"
+        print "> "
         mul1 = gets.to_i
+        p "*"
+        print "> "
         mul2 = gets.to_i
         multiply(mul1, mul2)
     when "sum"
+        p "Entrez vos valeurs une à une, entrez '0' pour confirmer !"
+        print "> "
         arr = []
         sum(arr)
     when "power"
+        p "Entrez une première valeur, puis une autre pour avoir la puissance de cette première !"
+        print "> "
         pow1 = gets.to_i
         pow2 = gets.to_i
         power(pow1, pow2)
     when "fact"
+        p "Entrez une valeur pour avoir sa factorielle !"
+        print "> "
         fact = gets.to_i
         factorial(fact)
     end

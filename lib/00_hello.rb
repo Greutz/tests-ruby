@@ -3,7 +3,7 @@ return "Hello!"
 end
 
 def greet(name)
-return "Hello, #{name}!"
+return p "Hello, #{name}!"
 end
 
 def perform
