@@ -10,6 +10,7 @@ end
 
 def sum(arr)
     n = gets.chomp.to_i
+    # Boucle permettant de rentrer plusieurs valeurs à additionner (on en sort en rentrant 0)
     while n != 0
         print "> "
         arr << n
